@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS  # 允許跨域請求
 
 app = Flask(__name__)
-CORS(app)  # 讓前端能夠訪問 Flask API
+CORS(app)  # 讓前端可以請求 API
 
 @app.route("/calculate", methods=["GET"])
 def calculate():
@@ -15,4 +15,4 @@ def calculate():
         return jsonify({"error": "請輸入數字"}), 400
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=10000)
